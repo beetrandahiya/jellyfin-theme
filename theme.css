@@ -3,95 +3,99 @@
 
 
 /* ============================================
-   ElegantFin → Apple Liquid Glass Overrides
-   Append this block at the END of the theme
+   ElegantFin → macOS Liquid Glass Overrides
+   Premium frosted glass aesthetic with depth
    ============================================ */
 
 :root {
   /* General feel */
   color-scheme: light;
-  --elegantFinFooterText: "ElegantGlass v26.01.08";
+  --elegantFinFooterText: "macOS Glass • v26.01.08";
 
-  /* Background gradient – soft Apple grey */
-  --darkerGradientPoint: #e5e7eb; /* slate-200 */
-  --darkerGradientPointAlpha: rgba(229, 231, 235, 0.95);
-  --lighterGradientPoint: #f9fafb; /* slate-50 */
-  --lighterGradientPointAlpha: rgba(249, 250, 251, 0.96);
-  --gradientPointAlpha: rgba(255, 255, 255, 0.35);
+  /* Ultra-light background with depth */
+  --darkerGradientPoint: #f0f0f2;
+  --darkerGradientPointAlpha: rgba(240, 240, 242, 0.97);
+  --lighterGradientPoint: #fafbfb;
+  --lighterGradientPointAlpha: rgba(250, 251, 251, 0.98);
+  --gradientPointAlpha: rgba(255, 255, 255, 0.4);
 
-  --backgroundGradient: radial-gradient(circle at top left, #ffffff 0, #f5f5f7 38%, #e5e7eb 100%);
+  --backgroundGradient: radial-gradient(
+    ellipse 120% 100% at 50% 0%,
+    #ffffff 0%,
+    #fafbfb 25%,
+    #f5f5f7 60%,
+    #eff0f2 100%
+  );
 
-  /* Core glass panels */
-  --headerColor: rgba(255, 255, 255, 0.78);
-  --drawerColor: rgba(255, 255, 255, 0.82);
+  /* Premium glass surfaces */
+  --headerColor: rgba(255, 255, 255, 0.80);
+  --drawerColor: rgba(255, 255, 255, 0.85);
   --headerColorGradient: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(255, 255, 255, 0.72) 55%,
-    transparent 100%
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    transparent 95%
   );
   --headerColorGradientAlt: var(--headerColorGradient);
 
-  /* Subtle Apple-style borders */
-  --borderColor: rgba(148, 163, 184, 0.55);         /* slate-400-ish */
-  --darkerBorderColor: rgba(148, 163, 184, 0.7);
-  --lighterBorderColor: rgba(255, 255, 255, 0.75);
+  /* Refined borders for glass effect */
+  --borderColor: rgba(180, 180, 185, 0.45);
+  --darkerBorderColor: rgba(180, 180, 185, 0.55);
+  --lighterBorderColor: rgba(255, 255, 255, 0.85);
 
-  /* Text colors tilted to light UI */
-  --textColor: #111827;         /* slate-900 */
-  --dimTextColor: #6b7280;      /* slate-500 */
+  /* Dark text for light UI */
+  --textColor: #1d1d1f;
+  --dimTextColor: #86868b;
 
-  /* Accent colors – Apple blue & friends */
-  --uiAccentColor: #0a84ff;     /* iOS system blue */
-  --activeColor: #0a84ff;
-  --activeColorAlpha: rgba(10, 132, 255, 0.9);
-  --highlightOutlineColor: rgba(10, 132, 255, 0.85);
+  /* Apple system colors */
+  --uiAccentColor: #007aff;
+  --activeColor: #007aff;
+  --activeColorAlpha: rgba(0, 122, 255, 0.95);
+  --highlightOutlineColor: rgba(0, 122, 255, 0.9);
 
-  /* Buttons */
-  --btnMiniPlayColor: #34c759;       /* iOS green */
+  /* Apple system button colors */
+  --btnMiniPlayColor: #34c759;
   --btnMiniPlayBorderColor: #5cd873;
-  --btnSubmitColor: #0a84ff;
-  --btnSubmitBorderColor: #0a84ff;
+  --btnSubmitColor: #007aff;
+  --btnSubmitBorderColor: #007aff;
   --btnDeleteColor: #ff3b30;
-  --btnDeleteBorderColor: #ff3b30;
+  --btnDeleteBorderColor: #ff453a;
 
-  /* Checkboxes, sliders, etc. */
-  --checkboxCheckedBgColor: #0a84ff;
-  --osdSeekBarPlayedColor: #111827;
-  --osdSeekBarBufferedColorAlpha: rgba(148, 163, 184, 0.35);
+  --checkboxCheckedBgColor: #007aff;
+  --osdSeekBarPlayedColor: #1d1d1f;
+  --osdSeekBarBufferedColorAlpha: rgba(180, 180, 185, 0.3);
   --osdSeekBarThumbColor: #ffffff;
 
-  /* Glass blur levels – stronger & smoother */
-  --blurSmallest: blur(4px);
-  --blurDefault: blur(16px);
-  --blurLarge: blur(24px);
-  --blurLargest: blur(32px);
+  /* Blur levels – macOS style */
+  --blurSmallest: blur(6px);
+  --blurDefault: blur(20px);
+  --blurLarge: blur(30px);
+  --blurLargest: blur(40px);
 
-  /* Softer, more Apple-like shadow */
-  --shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  /* Deep, delicate shadows */
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
 
-  /* Header blur mask a bit gentler */
-  --headerBlurMask: linear-gradient(180deg, white 55%, 90%, transparent);
+  --headerBlurMask: linear-gradient(180deg, white 50%, 85%, transparent);
 
-  /* Cards */
+  /* Glass gradient cards */
   --cardBackgroundGradient: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.75)
+    135deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.80)
   );
 
-  /* OS D overlays */
-  --topOSDGradient: linear-gradient(180deg, rgba(15, 23, 42, 0.65), 60%, rgba(15, 23, 42, 0));
-  --bottomOSDGradient: linear-gradient(0deg, rgba(15, 23, 42, 0.65), 60%, rgba(15, 23, 42, 0));
+  /* Overlay gradients – refined */
+  --topOSDGradient: linear-gradient(180deg, rgba(20, 20, 22, 0.72), 50%, rgba(20, 20, 22, 0));
+  --bottomOSDGradient: linear-gradient(0deg, rgba(20, 20, 22, 0.72), 50%, rgba(20, 20, 22, 0));
 
-  /* Keep logos visible over lighter BG */
-  --itemBackdropMask: linear-gradient(180deg, rgba(15, 23, 42, 0.9), 72%, transparent);
+  /* Backdrop mask */
+  --itemBackdropMask: linear-gradient(180deg, rgba(15, 15, 17, 0.92), 70%, transparent);
 
-  /* Slightly rounder for glass tiles */
-  --largerRadius: 1.5em;
-  --largeRadius: 1.1em;
-  --smallRadius: 0.7em;
-  --smallerRadius: 0.5em;
+  /* Border radius – premium rounded */
+  --largerRadius: 1.6em;
+  --largeRadius: 1.2em;
+  --smallRadius: 0.75em;
+  --smallerRadius: 0.55em;
 }
 
 /* ===== Global background → soft Apple gradient ===== */
