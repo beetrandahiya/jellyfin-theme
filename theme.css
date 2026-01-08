@@ -134,86 +134,103 @@ html,
 .programGuideSection,
 .trackSelections,
 .itemDetailsGroup {
-  background: rgba(255, 255, 255, 0.78) !important;
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  background: rgba(255, 255, 255, 0.80) !important;
+  backdrop-filter: blur(32px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.08);
   border-radius: var(--largeRadius) !important;
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
   box-shadow: var(--shadow);
 }
 
-/* Drawer + header refinement */
+/* Drawer refinement */
 .mainDrawer,
 .drawer-open {
-  background: rgba(255, 255, 255, 0.82) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-right: 1px solid rgba(200, 200, 205, 0.5) !important;
+  backdrop-filter: blur(32px) saturate(200%);
 }
 
+/* Header glass effect */
 .skinHeader-blurred:not(.osdHeader):not(.semiTransparent) {
   background: var(--headerColorGradient) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(28px) saturate(200%) brightness(1.05) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05) !important;
+  border-bottom: 1px solid rgba(200, 200, 205, 0.5);
 }
 
-/* ===== Cards: floating glass tiles ===== */
+/* ===== Premium glass cards with depth ===== */
 
 .cardScalable {
   background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 0.78)
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.82)
   ) !important;
   border-radius: var(--largeRadius) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(200, 200, 205, 0.6) !important;
   box-shadow: var(--shadow);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .card-hoverable:hover .cardScalable {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.22);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18), 0 2px 12px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 122, 255, 0.4);
 }
 
-/* Card overlay tint lighter */
+/* Refined card overlay */
 .cardOverlayContainer {
   background: radial-gradient(
-    circle at 10% 0,
-    rgba(255, 255, 255, 0.3),
-    rgba(148, 163, 184, 0.12)
+    circle at 20% 0,
+    rgba(255, 255, 255, 0.4),
+    rgba(200, 200, 205, 0.08)
   );
 }
 
-/* ===== Buttons: pill, soft borders, Apple colors ===== */
+/* ===== Premium buttons with Apple style ===== */
 
 .btnPlay.detailButton {
-  background-color: rgba(255, 255, 255, 0.96) !important;
-  color: #111827 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  color: #1d1d1f !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(148, 163, 184, 0.7) !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(180, 180, 185, 0.6) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .btnPlay.detailButton:hover {
   background-color: #ffffff !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Generic buttons */
 .emby-button.block,
 .button-alt,
 .raised,
 .dashboardActionsContainer > .emby-button,
 .fab {
   border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: #111827 !important;
-  border: 1px solid rgba(148, 163, 184, 0.7) !important;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #1d1d1f !important;
+  border: 1px solid rgba(180, 180, 185, 0.6) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
 }
 
+.emby-button.block:hover,
+.button-alt:hover,
+.raised:hover,
+.fab:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Submit button – Apple blue */
 .button-submit,
 .btnSubmit {
-  background: #0a84ff !important;
-  border-color: #0a84ff !important;
+  background: #007aff !important;
+  border-color: #0051d5 !important;
   color: #ffffff !important;
 }
 
@@ -223,7 +240,7 @@ html,
 .btnRevoke,
 #btnShutdown {
   background: #ff3b30 !important;
-  border-color: #ff3b30 !important;
+  border-color: #ff453a !important;
   color: #ffffff !important;
 }
 
@@ -232,71 +249,84 @@ html,
 .listItemImageButton,
 .layout-mobile .cardOverlayButton-br:not([data-action="menu"]) > .cardOverlayButtonIcon {
   background-color: #34c759 !important;
-  border-color: #5cd873 !important;
+  border-color: #30b84b !important;
+  box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
 }
 
-/* ===== Inputs & selectors: soft rounded fields ===== */
+/* ===== Refined inputs & selectors ===== */
 
 .emby-select-withcolor,
 .emby-select,
 .emby-input,
 .emby-textarea {
-  background-color: rgba(255, 255, 255, 0.78) !important;
+  background-color: rgba(255, 255, 255, 0.80) !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(148, 163, 184, 0.7) !important;
-  backdrop-filter: blur(18px);
+  border: 1px solid rgba(180, 180, 185, 0.6) !important;
+  backdrop-filter: blur(20px);
+  color: #1d1d1f !important;
 }
 
-/* Search pill */
 .searchfields-txtSearch {
   border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(180, 180, 185, 0.6) !important;
 }
 
-/* ===== Now playing glass look ===== */
+/* ===== Now Playing with premium glass ===== */
 
 .layout-desktop .nowPlayingInfoContainer {
-  background: rgba(255, 255, 255, 0.86) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
   border-radius: var(--largerRadius) !important;
+  backdrop-filter: blur(28px) saturate(200%);
 }
 
 .nowPlayingBar {
-  backdrop-filter: blur(22px) saturate(170%);
-  -webkit-backdrop-filter: blur(22px) saturate(170%);
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(26px) saturate(200%) brightness(1.06);
+  -webkit-backdrop-filter: blur(26px) saturate(200%) brightness(1.06);
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-top: 1px solid rgba(200, 200, 205, 0.5);
 }
 
 /* Progress bar to Apple blue */
 .playbackProgress > div,
 .progressring-spiner {
-  background-color: #0a84ff !important;
-  border-color: #0a84ff !important;
+  background-color: #007aff !important;
+  border-color: #0051d5 !important;
 }
 
-/* ===== Tabs – rounded glass chips ===== */
+/* ===== Tabs – glass chips ===== */
 
 .sectionTabs .emby-tab-button {
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  color: #4b5563 !important;
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  color: #6b6b70 !important;
   border-radius: 999px !important;
+  border: 1px solid rgba(200, 200, 205, 0.4) !important;
+  transition: all 0.2s ease;
+}
+
+.sectionTabs .emby-tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .sectionTabs .emby-tab-button-active {
-  background-color: #0a84ff !important;
+  background-color: #007aff !important;
   color: #ffffff !important;
+  border-color: #0051d5 !important;
+  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
 }
 
-/* ===== Login page ===== */
+/* ===== Login page – premium glass ===== */
 
 #loginPage .padded-left.padded-right.padded-bottom-page {
-  background: rgba(255, 255, 255, 0.85) !important;
-  border-radius: 1.75em !important;
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-radius: 1.8em !important;
+  backdrop-filter: blur(32px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.08);
   box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
 }
 
 .manualLoginForm::before,
 .visualLoginForm::before {
-  color: #111827 !important;
+  color: #1d1d1f !important;
 }
